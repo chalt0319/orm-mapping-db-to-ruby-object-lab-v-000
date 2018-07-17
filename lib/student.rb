@@ -60,7 +60,7 @@ class Student
     SELECT * FROM students WHERE id <= ?
     SQL
 
-    DB[:conn].execute(sql).map do |row|
+    DB[:conn].execute(sql, number).map do |row|
       Student.new_from_db(row)
     end
 
