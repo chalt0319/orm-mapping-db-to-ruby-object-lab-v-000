@@ -19,9 +19,9 @@ class Student
     SELECT * FROM students
     SQL
 
-    # binding.pry
-
-    DB[:conn].execute(sql)
+    DB[:conn].execute(sql).each do |row|
+      Student.new_from_db(row)
+    end
   end
 
   def self.find_by_name(name)
