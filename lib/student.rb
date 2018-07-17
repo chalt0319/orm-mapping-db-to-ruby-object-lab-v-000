@@ -49,7 +49,7 @@ class Student
     sql = <<-SQL
     SELECT * FROM students WHERE grade < 12
     SQL
-    binding.pry
+    # binding.pry
 
     DB[:conn].execute(sql).map do |row|
       Student.new_from_db(row)
