@@ -47,13 +47,11 @@ class Student
 
   def self.students_below_12th_grade
     sql = <<-SQL
-    SELECT * FROM students WHERE grade < 12
+    SELECT name FROM students WHERE grade < 12
     SQL
     binding.pry
 
-    DB[:conn].execute(sql).each do |row|
-      row
-    end
+    DB[:conn].execute(sql).flatten
 
   end
 
