@@ -51,9 +51,13 @@ class Student
     SQL
     # binding.pry
 
-    row = DB[:conn].execute(sql)
-    Student.new_from_db(row.flatten)
-    row
+    DB[:conn].execute(sql, name).map do |row|
+        self.new_from_db(row)
+      end.first
+        
+    # row = DB[:conn].execute(sql)
+    # Student.new_from_db(row.flatten)
+    # row
   end
 
   def save
