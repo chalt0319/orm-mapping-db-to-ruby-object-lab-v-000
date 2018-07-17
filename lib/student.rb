@@ -19,7 +19,7 @@ class Student
     SELECT * FROM students
     SQL
 
-    binding.pry
+    # binding.pry
 
     DB[:conn].execute(sql)
   end
@@ -47,12 +47,12 @@ class Student
 
   def self.students_below_12th_grade
     sql = <<-SQL
-    SELECT name FROM students WHERE grade < 12
+    SELECT * FROM students WHERE grade < 12
     SQL
-    # binding.pry
+    binding.pry
 
     DB[:conn].execute(sql).each do |row|
-    end 
+    end
 
   end
 
