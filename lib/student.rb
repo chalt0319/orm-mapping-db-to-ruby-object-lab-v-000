@@ -54,10 +54,10 @@ class Student
     DB[:conn].execute(sql).map do |row|
       Student.new_from_db(row)
     end
+  end
 
-    # row = DB[:conn].execute(sql)
-    # Student.new_from_db(row.flatten)
-    # row
+  def self.first_X_students_in_grade_10
+
   end
 
   def save
