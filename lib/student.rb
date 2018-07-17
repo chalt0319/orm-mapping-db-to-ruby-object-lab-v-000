@@ -49,9 +49,9 @@ class Student
     sql = <<-SQL
     SELECT name FROM students WHERE grade < 12
     SQL
-    # binding.pry
+    binding.pry
 
-    DB[:conn].execute(sql).flatten
+    DB[:conn].execute(sql)
 
   end
 
