@@ -51,8 +51,9 @@ class Student
     SQL
     # binding.pry
 
-    DB[:conn].execute(sql)
-
+    row = DB[:conn].execute(sql)
+    Student.new_from_db(row.flatten)
+    row
   end
 
   def save
