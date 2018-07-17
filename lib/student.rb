@@ -53,7 +53,7 @@ class Student
 
     DB[:conn].execute(sql).map do |row|
       Student.new_from_db(row)
-    end.first
+    end
 
     # row = DB[:conn].execute(sql)
     # Student.new_from_db(row.flatten)
