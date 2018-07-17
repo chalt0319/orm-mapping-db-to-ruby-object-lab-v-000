@@ -15,6 +15,13 @@ class Student
   def self.all
     # retrieve all the rows from the "Students" database
     # remember each row should be a new instance of the Student class
+    sql = <<-SQL
+    SELECT * FROM students
+    SQL
+
+    binding.pry
+
+    DB[:conn].execute(sql)
   end
 
   def self.find_by_name(name)
@@ -42,9 +49,10 @@ class Student
     sql = <<-SQL
     SELECT name FROM students WHERE grade < 12
     SQL
-    binding.pry
+    # binding.pry
 
-    DB[:conn].execute(sql)
+    DB[:conn].execute(sql).each do |row|
+      
   end
 
   def save
