@@ -52,7 +52,8 @@ class Student
     # binding.pry
 
     DB[:conn].execute(sql).each do |row|
-      
+    end 
+
   end
 
   def save
