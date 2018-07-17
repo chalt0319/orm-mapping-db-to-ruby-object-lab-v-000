@@ -24,7 +24,7 @@ class Student
     sql = <<-SQL
     SELECT * FROM students WHERE name = ?
     SQL
-    binding.pry
+    # binding.pry
 
     row = DB[:conn].execute(sql, name)
     new_s = Student.new_from_db(row.flatten)
